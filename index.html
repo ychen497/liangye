@@ -214,7 +214,7 @@ const I18N={"zh": {"lang": "zh-Hant", "doc": "良夜不會敲門", "eb_b": "IP �
   if (!I18N[start]) {
     const nav = (navigator.languages || [navigator.language || ""]).map(s => s.toLowerCase());
     const pick = nav.map(s => s.startsWith("zh") ? "zh" : s.startsWith("ko") ? "ko" : s.startsWith("ja") ? "ja" : s.startsWith("th") ? "th" : s.startsWith("en") ? "en" : "").find(Boolean);
-    start = pick || "zh";
+    start = pick || "en";
   }
   if (start !== "zh") apply(start, false); else btns.forEach(b => b.setAttribute("aria-pressed", String(b.dataset.lang === "zh")));
   addEventListener("hashchange", () => { const h = location.hash.slice(1); if (I18N[h] && h !== lang) apply(h, true); });
